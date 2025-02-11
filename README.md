@@ -2,7 +2,8 @@
 <br>
 List of programs on C#
 <br>
-1. Write a C# program that asks the user to enter multiple lines of text (until they type "STOP"). Save these lines into a file <br>named "output.txt". Then, read and display the contents of the file. Implement proper exception handling to catch potential <br>errors (e.g., file access issues)
+1. Write a C# program that asks the user to enter multiple lines of text (until they type "STOP"). Save these lines into<br> a file named "output.txt". Then, read and display the contents of the file. Implement proper exception handling to <br>
+catch potential errors (e.g., file access issues)
 <br>
 2.Write a program that takes a list of integers from the user and performs the following operations using LINQ:<br>
 a) Find all numbers greater than 50<br>
