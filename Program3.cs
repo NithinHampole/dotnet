@@ -6,8 +6,6 @@ namespace ProgramList
 {
     class Program3
     {
-
-
         static void Main(string[] args)
         {
             Dictionary<int, string> Student = new Dictionary<int, string>();
