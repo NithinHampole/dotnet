@@ -13,8 +13,6 @@ namespace ProgramList
             bool flag = false;
             try
             {
-
-
                 while (flag != true)
                 {
                     string input = Console.ReadLine();
