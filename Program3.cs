@@ -10,6 +10,8 @@ namespace ProgramList
         {
             Dictionary<int, string> studentData = new Dictionary<int, string>();
             bool stopFlag = true;
+            int studentId;
+            string studentName;
             do
             {
                 Console.WriteLine("----------------------------");
@@ -23,9 +25,9 @@ namespace ProgramList
                         try
                         {
                             Console.WriteLine("Enter Student ID in Numeric Value");
-                            int studentId = Convert.ToInt32(Console.ReadLine());
+                            studentId = Convert.ToInt32(Console.ReadLine());
                             Console.WriteLine("Enter Student Name");
-                            string studentName = Console.ReadLine();
+                            studentName = Console.ReadLine();
                             studentData.Add(studentId, studentName);
                             Console.WriteLine("\nStudent added Successfully\n");
                             stopFlag = true;
@@ -46,10 +48,10 @@ namespace ProgramList
                     case 2:
                         try
                         {
-                            Console.WriteLine("\nEnter Student ID in Numeric Value to Delete");
-                            int Id = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("\nEnter Student ID in Numeric Value to Delete\n");
+                            studentId = Convert.ToInt32(Console.ReadLine());
 
-                            if (studentData.Remove(Id))
+                            if (studentData.Remove(studentId))
                             {
                                 Console.WriteLine("\nStudent removed Successfully\n");
                             }
