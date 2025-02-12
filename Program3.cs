@@ -8,8 +8,8 @@ namespace ProgramList
     {
         static void Main(string[] args)
         {
-            Dictionary<int, string> Student = new Dictionary<int, string>();
-            bool flag = false;
+            Dictionary<int, string> studentData = new Dictionary<int, string>();
+            bool stopFlag = true;
             do
             {
                 Console.WriteLine("----------------------------");
@@ -23,12 +23,12 @@ namespace ProgramList
                         try
                         {
                             Console.WriteLine("Enter Student ID in Numeric Value");
-                            int id = Convert.ToInt32(Console.ReadLine());
+                            int studentId = Convert.ToInt32(Console.ReadLine());
                             Console.WriteLine("Enter Student Name");
-                            string name = Console.ReadLine();
-                            Student.Add(id, name);
+                            string studentName = Console.ReadLine();
+                            studentData.Add(studentId, studentName);
                             Console.WriteLine("\nStudent added Successfully\n");
-                            flag = false;
+                            stopFlag = true;
 
                         }
                         catch (ArgumentException e)
@@ -46,12 +46,12 @@ namespace ProgramList
                     case 2:
                         try
                         {
-                            Console.WriteLine("Enter Student ID in Numeric Value to Delete");
+                            Console.WriteLine("\nEnter Student ID in Numeric Value to Delete");
                             int Id = Convert.ToInt32(Console.ReadLine());
 
-                            if (Student.Remove(Id))
+                            if (studentData.Remove(Id))
                             {
-                                Console.WriteLine("Student removed Successfully\n");
+                                Console.WriteLine("\nStudent removed Successfully\n");
                             }
                             else
                             {
@@ -59,7 +59,7 @@ namespace ProgramList
 
                             }
 
-                            flag = false;
+                            stopFlag = true;
 
                         }
                         catch (KeyNotFoundException e)
@@ -74,29 +74,29 @@ namespace ProgramList
                         break;
 
                     case 3:
-                        if (Student.Count == 0)
+                        if (studentData.Count == 0)
                         {
                             Console.WriteLine("\nNO Data Present");
                             break;
                         }
-                        Console.WriteLine("Student Data\n");
-                        foreach (var stu in Student)
+                        Console.WriteLine("\nStudent Data\n");
+                        foreach (var stu in studentData)
                         {
                             Console.WriteLine($"ID:{stu.Key}\t\tName:{stu.Value}");
                         }
-                        flag = false;
+                        stopFlag = true;
                         break;
 
                     case 4:
-                        flag = true;
+                        stopFlag = false;
                         break;
 
                     default:
                         Console.WriteLine("\nYou have Entered Wrong Number");
-                        flag = false;
+                        stopFlag = true;
                         break;
                 }
-            } while (flag != true);
+            } while (stopFlag == true);
         }
     }
 }

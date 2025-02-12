@@ -9,28 +9,27 @@ namespace ProgramList
         static void Main(string[] args)
         {
             Console.WriteLine("Enter Input Text");
-            StringBuilder SavedInput = new StringBuilder();
-            bool flag = false;
+            StringBuilder savedInput = new StringBuilder();
+            bool stopFlag = true;
             try
             {
-                while (flag != true)
+                while (stopFlag != false)
                 {
                     string input = Console.ReadLine();
                     if (input.Contains("STOP"))
                     {
-                        flag = true;
+                        stopFlag = false;
                         break;
                     }
-                    SavedInput.AppendLine(input);
+                    savedInput.AppendLine(input);
                 }
 
-                string Path = @"C:\Users\Prodigy\Desktop\Read\output.txt";
-                File.WriteAllText(Path, SavedInput.ToString());
+                string filePath = @"C:\Users\Prodigy\Desktop\Read\output.txt";
+                File.WriteAllText(filePath, savedInput.ToString());
 
-                string Content = File.ReadAllText(Path);
-                Console.WriteLine("\nReading Content of file...");
-                Console.WriteLine();
-                Console.WriteLine(Content);
+                string fileContent = File.ReadAllText(filePath);
+                Console.WriteLine("\nReading Content of file...\n");
+                Console.WriteLine(fileContent);
             }
             catch (UnauthorizedAccessException e)
             {
